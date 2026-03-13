@@ -9,6 +9,7 @@
 
 <body>
     <div id="root">
+        <h1>hola</h1>
 
     </div>
 
@@ -24,31 +25,43 @@
             { id: 2, nombre: "Arroz con pollo", categoria: "segundos", precio: 12, stock: 5, disponible: "si" },
             { id: 3, nombre: "Sopa de verduras", categoria: "entradas", precio: 8, stock: 0, disponible: "no" },
         ];
+        let dibujos = [
+            { id: 1, nombre: "goku", categoria: "segundos", precio: 18, stock: 3, disponible: "si" },
+            { id: 2, nombre: "naruto", categoria: "segundos", precio: 12, stock: 5, disponible: "si" },
+            { id: 3, nombre: "luffy", categoria: "entradas", precio: 8, stock: 0, disponible: "no" },
+        ];
 
 
         // 1. Esto es un "Componente" de React (empieza con Mayúscula)
         // js + html
         function RenderCarta({ platos }) {
-
+            let esto = platos.map((plato) => (
+                <ul key={plato.id}>
+                    <li>Nombre: {plato.nombre}</li>
+                    <li>Categoria: {plato.categoria}</li>
+                    <li>Precio: S/ {plato.precio}</li>
+                    <li>Stock: {plato.stock}</li>
+                    <li>Disponible: {plato.disponible}</li>
+                </ul>
+            ))
             // 2. React usa .map() para crear listas, no un for "limpio"
             return (
                 <div>
-                    {platos.map((plato) => (
-                        <ul key={plato.id}>
-                            <li>Nombre: {plato.nombre}</li>
-                            <li>Categoria: {plato.categoria}</li>
-                            <li>Precio: S/ {plato.precio}</li>
-                            <li>Stock: {plato.stock}</li>
-                            <li>Disponible: {plato.disponible}</li>
-                        </ul>
-                    ))}
+                    <h1>Carta de platos</h1>
+                    <h2>aqui ta:</h2>
+                    {esto}
                 </div>
-            );
+            )
+                ;
         }
 
 
         const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(<RenderCarta platos={platos} />);
+        root.render(
+            <div>
+                <RenderCarta platos={platos} />
+                <RenderCarta platos={dibujos} />
+            </div>);
 
     </script>
 
