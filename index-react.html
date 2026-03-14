@@ -20,6 +20,7 @@
 
 
     <script type="text/babel">
+        
         let platos = [
             { id: 1, nombre: "Lomo saltado", categoria: "segundos", precio: 18, stock: 3, disponible: "si" },
             { id: 2, nombre: "Arroz con pollo", categoria: "segundos", precio: 12, stock: 5, disponible: "si" },
@@ -42,8 +43,11 @@
                     <li>Precio: S/ {plato.precio}</li>
                     <li>Stock: {plato.stock}</li>
                     <li>Disponible: {plato.disponible}</li>
+                    {/*{if (plato.disponible) { "✅" }}*/}
+                    {plato.disponible === "si" ? "✅" : "❌"}      
+                    
                 </ul>
-            ))
+             ))
             // 2. React usa .map() para crear listas, no un for "limpio"
             return (
                 <div>
@@ -59,11 +63,27 @@
         const root = ReactDOM.createRoot(document.getElementById("root"));
         root.render(
             <div>
+                <Etiqueta />
                 <RenderCarta platos={platos} />
                 <RenderCarta platos={dibujos} />
             </div>);
 
+
+    function Etiqueta(){
+
+        return(
+            <>
+                <h2>Etiqueta</h2>
+                <h2>pene de gato</h2>
+                <li className="plato-agoado"></li> 
+            </>
+        )
+    }     
+
+    
+
     </script>
+    
 
 </body>
 
