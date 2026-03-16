@@ -12,15 +12,22 @@
         <h1>hola</h1>
 
     </div>
+    <div id="root2">
+        <h1>hola</h1>
+
+    </div>
 
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./data/platos_mocks.js"></script>
+
 
 
 
     <script type="text/babel">
-        
+
+
         let platos = [
             { id: 1, nombre: "Lomo saltado", categoria: "segundos", precio: 18, stock: 3, disponible: "si" },
             { id: 2, nombre: "Arroz con pollo", categoria: "segundos", precio: 12, stock: 5, disponible: "si" },
@@ -44,10 +51,10 @@
                     <li>Stock: {plato.stock}</li>
                     <li>Disponible: {plato.disponible}</li>
                     {/*{if (plato.disponible) { "✅" }}*/}
-                    {plato.disponible === "si" ? "✅" : "❌"}      
-                    
+                    {plato.disponible === "si" ? "✅" : "❌"}
+
                 </ul>
-             ))
+            ))
             // 2. React usa .map() para crear listas, no un for "limpio"
             return (
                 <div>
@@ -66,24 +73,60 @@
                 <Etiqueta />
                 <RenderCarta platos={platos} />
                 <RenderCarta platos={dibujos} />
+                <PlatoCard array={platosMock} />
             </div>);
 
 
-    function Etiqueta(){
 
-        return(
+        function Etiqueta() {
+            return (
+                <>
+                    <h2>Etiqueta</h2>
+                    <h2>pene de gato</h2>
+                    <li className="plato-agoado"></li>
+                </>
+            )
+        }
+
+        function PlatoCard({ nombre, categoria, precio, stock, disponible }) {
+            return (
+                <div style={{ color: disponible ? 'black' : 'gray', opacity: disponible ? 1 : 0.5 }}>
+                    <h2>Nombre:{nombre}</h2>
+                    <h2>Categoria:{categoria}</h2>
+                    <h2>Precio:{precio}</h2>
+                    <h2>Stock:{stock}</h2>
+                    <h2 >Disponible: {disponible ? "✅ si" : "❌ no"}</h2>
+                </div>
+            )
+        }
+
+        const loop = ReactDOM.createRoot(document.getElementById("root2"));
+        loop.render(
             <>
-                <h2>Etiqueta</h2>
-                <h2>pene de gato</h2>
-                <li className="plato-agoado"></li> 
-            </>
-        )
-    }     
+                {platosMock.map(plato => (
+                    <div key={plato.id}>
+                        <PlatoCard
+                            nombre={plato.nombre}
+                            categoria={plato.categoria}
+                            precio={plato.precio}
+                            stock={plato.stock}
+                            disponible={plato.disponible} />
+                    </div>
 
-    
+                ))}
+            </>
+
+        );
+
+       
+
+
+
+
+
 
     </script>
-    
+
 
 </body>
 
