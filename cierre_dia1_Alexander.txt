@@ -1,0 +1,5 @@
+La diferencia principal es que React no es destructivo; no borra todo el DOM, solo 
+'parcha' lo que cambió. JSX es una extensión de JavaScript que Vite tiene que convertir
+a JS normal para que el navegador lo entienda. Vite nos va a salvar de los problemas 
+de hoy con los scripts y CDNs porque permite manejar módulos reales y es mucho más 
+rápido para trabajar.

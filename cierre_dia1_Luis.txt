@@ -1,0 +1,5 @@
+En el Sprint 0 usaba innerHTML, que básicamente borraba toda la lista para actualizar 
+un dato. Con PlatoCard usamos el Virtual DOM de React, que es más inteligente: 
+compara qué cambió y solo actualiza ese pedacito. JSX es JS con apariencia de HTML. 
+Usamos mocks porque así cuando Node esté listo, los datos encajarán directo sin romper 
+mi tarjeta.
