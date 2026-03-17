@@ -21,11 +21,14 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="./data/platos_mocks.js"></script>
+    <script type="text/babel" src="./components/PlatoCard.jsx"></script>
+
 
 
 
 
     <script type="text/babel">
+
 
 
         let platos = [
@@ -73,7 +76,7 @@
                 <Etiqueta />
                 <RenderCarta platos={platos} />
                 <RenderCarta platos={dibujos} />
-                <PlatoCard array={platosMock} />
+
             </div>);
 
 
@@ -88,21 +91,10 @@
             )
         }
 
-        function PlatoCard({ nombre, categoria, precio, stock, disponible }) {
-            return (
-                <div style={{ color: disponible ? 'black' : 'gray', opacity: disponible ? 1 : 0.5 }}>
-                    <h2>Nombre:{nombre}</h2>
-                    <h2>Categoria:{categoria}</h2>
-                    <h2>Precio:{precio}</h2>
-                    <h2>Stock:{stock}</h2>
-                    <h2 >Disponible: {disponible ? "✅ si" : "❌ no"}</h2>
-                </div>
-            )
-        }
-
         const loop = ReactDOM.createRoot(document.getElementById("root2"));
         loop.render(
             <>
+                <h2>Carta de platos Mocks</h2>
                 {platosMock.map(plato => (
                     <div key={plato.id}>
                         <PlatoCard
@@ -118,7 +110,7 @@
 
         );
 
-       
+
 
 
 

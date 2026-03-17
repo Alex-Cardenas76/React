@@ -1,0 +1,33 @@
+Tarjeta de evaluación — completar y entregar
+EVALUADOR:
+ Alexander Cardenas
+EVALUADO:
+ Luis Cajacuri
+ESCENARIO ELEGIDO:
+2. Muéstrame el componente PlatoCard que construyeron. Explícame qué hace cada línea. Si en alguna línea no puedes explicarla, eso es lo que necesitas repasar.
+RESUMEN DE LA RESPUESTA:
+ El componente PlatoCard esta a la espera de su llamado y esperando props que se le asignen para poder retornar un plato dentro de etiquetas <div> con todos sus variables .
+QUÉ ENTENDIÓ BIEN: (una frase)
+ Cada componente debe retornar solo un elemento raiz para que el methodo render pueda mostrarlo.
+QUÉ NECESITA REPASAR: (una frase)
+ Logica de jsx 
+
+
+Tarjeta de evaluación — completar y entregar
+EVALUADOR:
+ Luis Cajacuri
+EVALUADO:
+ Alexander Cardenas
+ESCENARIO ELEGIDO:
+  En el Sprint 0 tenían renderMenu() con innerHTML. Hoy construyeron PlatoCard. Si el restaurante tiene 50 platos y cambia el stock de uno solo, ¿qué hace cada solución? ¿Cuántos nodos del DOM toca cada una?
+
+
+RESUMEN DE LA RESPUESTA:
+ La solucion de renderMenu eliminaria la lista y la volveria a cargar todo aplicando los cambios entrantes , mientras el Platocard simplemente aplicaria el cambio donde se hizo la modificacion usando su virtual DOM .
+renderMenu toca 2 nodos el id de la etiqueta y el contenido que se muestra en esta, Platocard solo toca un nodo que es la etiqueta <li> en donde se aplicara el cambio 
+QUÉ ENTENDIÓ BIEN: (una frase)
+ La diferencia entre el DOM y virtual DOM
+QUÉ NECESITA REPASAR: (una frase)
+ Practica mas profunda a que son los nodos del DOM
+
+
